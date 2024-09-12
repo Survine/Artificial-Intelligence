@@ -1,16 +1,16 @@
 Function print_in_format(matrix):
-    For i from 0 to 8:
+    For i in range 0 to 8:
         If i%3==0 and i > 0:
             Print a new line
         Print the element at matrix[i] with a space at the end
 
 Function count(s):
     c = 0 <- Initialise c to count the no. of misplaced tiles
-    Ideal = [1, 2, 3,   <- Goal state
+    ideal = [1, 2, 3,   <- Goal state
              4, 5, 6,
              7, 8, 0]   
-    For i from 0 to 8:
-        If s[i] != 0 and s[i] != Ideal[i]:
+    For i in range 0 to 8:
+        If s[i] != 0 and s[i] != ideal[i]:
             Increment c by 1
 
     Return c  <- Return the count of misplaced tiles
@@ -19,7 +19,7 @@ Function move(ar, p, st):
     rh = 9999 <- Initialise rh as a large Value
     store_st = st.copy() <- Initialize store_st as a copy of st
     
-    For i from 0 to length of ar:
+    For i in range 0 to length of ar:
         dupl_st = st.copy() <- Initialize dupl_st as a copy of st
     
         Swap elements at positions p and ar[i] in dupl_st
@@ -33,10 +33,10 @@ Function move(ar, p, st):
     Return store_st and rh  <- Return the new state and updated heuristic value
 
 # Driver Code
-state = [1, 2, 3,  <- Initial state
+state = [1, 2, 3,  <- start state
          0, 4, 6,
          7, 5, 8]   
-h = count(state)  <- Initialise h for Heuristic value for the initial state
+h = count(state)  <- Initialise h for calcutaing no. of misplaced tiles in the initial state
 Level = 1 <- Initialise Level for each level of calculation of state and heruistic value
 
 Print "------ Level " + str(Level) + " ------"

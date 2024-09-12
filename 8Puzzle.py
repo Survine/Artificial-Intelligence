@@ -1,3 +1,5 @@
+#Function Bodies
+
 def print_in_format(matrix):
     for i in range(9):
         if i%3==0 and i>0:
@@ -33,12 +35,10 @@ def move(ar, p, st):
         if trh<rh:
             rh = trh
             store_st = dupl_st.copy()
-    
-    #print(rh, store_st)
-    
+            
     return store_st, rh
     
-    
+#Driver Code    
 state = [1, 2, 3,
          0, 4, 6,
          7, 5, 8]
@@ -50,10 +50,8 @@ print("\n------ Level "+str(Level)+" ------")
 print_in_format(state)
 print("\nHeuristic Value(Misplaced) : "+str(h))
 
-
 while h>0:
     pos = int(state.index(0))
-    
     Level += 1
     
     if pos==0:

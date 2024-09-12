@@ -1,26 +1,26 @@
-from collections import deque
+#Function Body-
 
-def bfs(graph, start):
-    visited = set()
-    queue = deque([start])
+bfs(Graph, StartNode):
 
-    while queue:
-        node = queue.popleft()
-        if node not in visited:
-            print(node)
-            visited.add(node)
-            neighbors = graph[node]
-            queue.extend(neighbors)
+	visited = []  <- Initialise List for visited nodes  
+	queue = []   <-  Initialize a queue for for storing nodes to explore
 
-# Example usage
-graph = {
-    '1': ['2', '3'],
-    '2': ['4'],
-    '3': ['4', '7'],
-    '4': ['5', '6'],
-    '7': [],
-    '5': [],
-    '6': []
-}
+	Add StartNode to Visited 
+	Add StartNode to Queue 
 
-bfs(graph, '1')
+	While Queue is not empty:
+		Remove the last element of queue
+		CurrentNode <- Initialise  and store the  removed element      
+		print (CurrentNode, with a space at the end)
+
+		For each Neighbor of CurrentNode in the graph:
+		If Neighbor is not in Visited:
+			Add Neighbor to Visited
+			Add Neighbor to Queue
+
+
+# Driver Code-
+
+Graph = { }  <- Graph Initialisation
+bfs(visited, graph,  StartNode)  <- Function Call
+
